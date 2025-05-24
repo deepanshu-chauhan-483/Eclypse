@@ -32,7 +32,8 @@ const LandingPage = () => {
     <VideoWithFallback
         videoSrc={video1}
         fallbackImg={hero}
-        className="col-span-3 md:col-span-2 bg-green-200 md:h-[476px] h-[200px] border rounded-lg"
+        overlayText="A silhoutee worth remembering"
+        className="col-span-3 md:col-span-2 bg-green-200 md:h-[500px] opacity-90 h-[200px] border rounded-lg"
       />
    
   </div>

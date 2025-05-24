@@ -1,7 +1,7 @@
 // components/VideoWithFallback.jsx
 import { useState } from "react";
 
-const VideoWithFallback = ({ videoSrc, fallbackImg, className = "" }) => {
+const VideoWithFallback = ({ videoSrc, fallbackImg, overlayText = "", className = "" }) => {
   const [videoLoaded, setVideoLoaded] = useState(false);
 
   const handleVideoPlay = () => {
@@ -24,8 +24,14 @@ const VideoWithFallback = ({ videoSrc, fallbackImg, className = "" }) => {
         loop
         muted
         playsInline
+        
         onPlaying={handleVideoPlay}
       />
+      {overlayText && (
+        <div className="absolute bottom-4 right-4  text-white text-4xl px-2 py-1 rounded-md z-20">
+          {overlayText}
+        </div>
+      )}
     </div>
   );
 };
