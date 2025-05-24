@@ -2,6 +2,7 @@ import React from 'react'
 import video1 from "../assets/video1.mp4"
 import video2 from "../assets/video2.mp4"
 import hero from "../assets/Hero_mp4.png"
+import hero2 from "../assets/Hero2.png"
 import frame19 from "../assets/Frame_19.png"
 import frame18 from "../assets/Frame_18.jpg"
 import frame17 from "../assets/Frame_17.jpg"
@@ -13,8 +14,11 @@ import ProductCart from '../components/ProductCart'
 import { MdOutlineArrowOutward } from "react-icons/md";
 import { useState } from "react"
 import { ChevronDown, ChevronUp } from "../components/Icons"
+import VideoWithFallback from '../components/VideoWithFallback'
 
 const LandingPage = () => {
+
+  
   return (
     <div className="lg:mx-20 mx-4">
 
@@ -25,16 +29,11 @@ const LandingPage = () => {
       
       <p className='text-white'>©2025</p>
     </div>
-    <div>
-    <video
-      src={video1}
-      className="object-cover w-full h-full border rounded-md"
-      autoPlay
-      loop
-      muted
-      playsInline
-    />
-    </div>
+    <VideoWithFallback
+        videoSrc={video1}
+        fallbackImg={hero}
+        className="col-span-3 md:col-span-2 bg-green-200 md:h-[476px] h-[200px] border rounded-lg"
+      />
    
   </div>
 
@@ -56,16 +55,11 @@ const LandingPage = () => {
 {/* <!-- Grid 1 --> */}
 <div class="grid grid-cols-3 gap-4 mt-[150px] w-full">
   {/* Video container */}
-  <div class="col-span-3 md:col-span-2 bg-green-200 md:h-[476px] h-[200px] border rounded-lg">
-    <video
-      src={video2}
-      className="object-cover w-full h-full border rounded-md"
-      autoPlay
-      loop
-      muted
-      playsInline
-    />
-  </div>
+  <VideoWithFallback
+        videoSrc={video2}
+        fallbackImg={hero2}
+        className="col-span-3 md:col-span-2 bg-green-200 md:h-[476px] h-[200px] border rounded-lg"
+      />
 
   {/* Frame18 (hidden on sm) */}
   <div class="hidden md:block col-span-1 md:h-[476px] h-[200px]">
